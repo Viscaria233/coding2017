@@ -1,5 +1,7 @@
 package algorithm.tree;
 
+import datastructure.basic.Queue;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -105,4 +107,53 @@ public class BinaryTreeUtil {
         return result;
     }
 
+    public static <T> TreeInfo layerOrder(BinaryTreeNode<T> root, Visitor<T> visitor) {
+        TreeInfo treeInfo = new TreeInfo();
+        if (root == null) {
+            return treeInfo;
+        }
+
+        Queue queue = new Queue();
+        queue.enQueue(root);
+        queue.enQueue(null);
+
+        while (!queue.isEmpty()) {
+            BinaryTreeNode<T> node = (BinaryTreeNode<T>) queue.deQueue();
+            if (node == null) {
+                treeInfo.layerCount++;
+                if(!queue.isEmpty()) {
+                    queue.enQueue(null);
+                }
+            } else {
+                treeInfo.nodeCount++;
+                if (visitor != null) {
+                    visitor.visit(node);
+                }
+                if (node.left != null) {
+                    queue.enQueue(node.left);
+                }
+                if (node.right != null) {
+                    queue.enQueue(node.right);
+                }
+            }
+        }
+        return treeInfo;
+    }
+
+    public interface Visitor<T> {
+        void visit(BinaryTreeNode<T> node);
+    }
+
+    public static class TreeInfo {
+        int layerCount;
+        int nodeCount;
+
+        public int getLayerCount() {
+            return layerCount;
+        }
+
+        public int getNodeCount() {
+            return nodeCount;
+        }
+    }
 }
