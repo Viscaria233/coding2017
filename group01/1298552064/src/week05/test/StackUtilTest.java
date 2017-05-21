@@ -19,6 +19,7 @@ public class StackUtilTest {
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testReverse() {
 		Stack<Integer> s = new Stack();
@@ -32,6 +33,7 @@ public class StackUtilTest {
 		Assert.assertEquals("[5, 4, 3, 2, 1]", s.toString());
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void testRemove() {
 		Stack<Integer> s = new Stack();
