@@ -2,8 +2,6 @@ package ood.srp.util;
 
 public class MailUtil {
 
-    public static StringBuilder sendingHistory = new StringBuilder();
-
     public static void sendEmail(String toAddress, String fromAddress, String subject,
                                  String message, String smtpHost, boolean debug) {
         //假装发了一封邮件
@@ -14,7 +12,6 @@ public class MailUtil {
         builder.append("Content:").append(message).append("\n");
 
         System.out.println(builder.toString());
-        sendingHistory.append(builder);
     }
 
 }
