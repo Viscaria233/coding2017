@@ -1,0 +1,12 @@
+From:admin@company.com
+To:aa@bb.com
+Subject:您关注的产品降价了
+Content:尊敬的 User1, 您关注的产品 iPhone8 降价了，欢迎购买!
+From:admin@company.com
+To:aa@bb.com
+Subject:您关注的产品降价了
+Content:尊敬的 User2, 您关注的产品 iPhone8 降价了，欢迎购买!
+From:admin@company.com
+To:aa@bb.com
+Subject:您关注的产品降价了
+Content:尊敬的 User3, 您关注的产品 iPhone8 降价了，欢迎购买!
